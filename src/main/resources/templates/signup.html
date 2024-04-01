@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signup Page</title>
+
+<link rel="stylesheet" href="./css/signup.css">
+
+</head>
+<body>
+<div class="container">
+    <h1>Signup Page</h1>
+    <form action="/signup" method="post" th:object="${libraryUser}">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" th:field="*{name}"><br>
+        <span th:errors="*{name}"></span>
+
+          <br>
+
+        <label for="mobile">Mobile:</label>
+        <input type="text" id="mobile" name="mobile" th:field="*{mobile}"><br>
+          <span th:errors="*{mobile}"></span>
+
+          <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" th:field="*{email}"><br>
+         <span th:errors="*{email}"></span>
+
+          <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" ><br>
+        <span th:errors="*{password}"></span>
+
+          <br>
+        
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" ><br>
+        
+        <span th:errors="*{confirm_password}"></span>
+
+          <br>
+
+        <label for="dob">DOB:</label>
+        <input type="date" id="dob" name="dob" th:field="*{dob}"><br>
+        
+        <span th:errors="*{dob}"></span>
+
+          <br>
+        
+        
+        
+        
+
+        <label>Role:</label>
+        <input type="radio" id="librarian" name="role" value="librarian" th:field="*{role}">
+        <label for="librarian">Librarian</label>
+        <input type="radio" id="student" name="role" value="student" th:field="*{role}">
+        <label for="student">Student</label><br>
+        
+          <span th:errors="*{role}"></span>
+
+          <br>
+        
+        
+        
+
+        <div class="btn-container">
+            <input type="submit" value="Submit">
+            <input type="button" value="Cancel">
+        </div>
+    </form>
+</div>
+</body>
+</html>
